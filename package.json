@@ -1,0 +1,30 @@
+{
+  "name": "deeptest",
+  "version": "1.0.0",
+  "description": "## Project Structure",
+  "main": "ecosystem.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:gateway": "cd api-gateway && node index.js",
+    "start:auth": "cd auth-service && node index.js",
+    "start:catalog": "cd catalog-service && node index.js",
+    "start:order": "cd order-service && node index.js",
+    "start:payment": "cd payment-service && node index.js",
+    "start:shipping": "cd shipping-service && node index.js",
+    "start:user": "cd user-service && node index.js",
+    "start:analytics": "cd analytics-service && node index.js",
+    "start:all": "concurrently \"npm:start:*\"",
+    "stop:all": "killall node",
+    "restart:all": "npm run stop:all && npm run start:all",
+    "status": "ps aux | grep node | grep -v grep"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3"
+  }
+}
